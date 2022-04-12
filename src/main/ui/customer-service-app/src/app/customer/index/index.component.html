@@ -1,0 +1,25 @@
+<div class="container">
+  <h1>Customers</h1>
+
+  <a href="#" routerLink="/customers/create/" class="btn btn-success">Add New Customer</a>
+  <br>
+  <br>
+  <table class="table table-bordered">
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Surname</th>
+      <th>Birth Date</th>
+      <th>Tel. Number</th>
+      <th>Email</th>
+    </tr>
+    <tr *ngFor="let customer of customers">
+      <td>{{ customer.id }}</td>
+      <td>{{ customer.name }}</td>
+      <td>{{ customer.surname }}</td>
+      <td>{{ customer.birthDate }}</td>
+      <td>{{ customer.telephoneNo }}</td>
+      <td>{{ customer.email }}</td>
+    </tr>
+  </table>
+</div>

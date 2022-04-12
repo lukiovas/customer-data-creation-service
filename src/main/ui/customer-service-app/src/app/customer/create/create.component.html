@@ -1,0 +1,70 @@
+<div class="container">
+  <h1>Add New Customer</h1>
+
+  <a href="#" routerLink="/customers" class="btn btn-primary">Back</a>
+
+  <form [formGroup]="form" (ngSubmit)="submit()">
+
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input
+        formControlName="name"
+        id="name"
+        type="text"
+        class="form-control">
+      <div *ngIf="f['name'].touched && f['name'].invalid" class="alert alert-danger">
+        <div *ngIf="f['name'].errors && f['name'].errors['required']">Name is required.</div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="surname">Surname</label>
+      <input
+        formControlName="surname"
+        id="surname"
+        type="text"
+        class="form-control">
+      <div *ngIf="f['surname'].touched && f['surname'].invalid" class="alert alert-danger">
+        <div *ngIf="f['surname'].errors && f['surname'].errors['required']">Surname is required.</div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="birthDate">Birth Date</label>
+      <input
+        formControlName="birthDate"
+        id="birthDate"
+        type="text"
+        class="form-control">
+      <div *ngIf="f['birthDate'].touched && f['birthDate'].invalid" class="alert alert-danger">
+        <div *ngIf="f['birthDate'].errors && f['birthDate'].errors['required']">Birth Date is required.</div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="telephoneNo">Telephone Number</label>
+      <input
+        formControlName="telephoneNo"
+        id="telephoneNo"
+        type="text"
+        class="form-control">
+      <div *ngIf="f['telephoneNo'].touched && f['telephoneNo'].invalid" class="alert alert-danger">
+        <div *ngIf="f['telephoneNo'].errors && f['telephoneNo'].errors['required']">Telephone Number is required.</div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input
+        formControlName="email"
+        id="email"
+        type="text"
+        class="form-control">
+      <div *ngIf="f['email'].touched && f['email'].invalid" class="alert alert-danger">
+        <div *ngIf="f['email'].errors && f['email'].errors['required']">Email is required.</div>
+      </div>
+    </div>
+    <br>
+    <button class="btn btn-primary" type="submit" [disabled]="!form.valid">Submit</button>
+  </form>
+</div>
